@@ -1,13 +1,18 @@
 import './globals.css'
+import Footer from '../components/footer'
+import { ClerkProvider } from '@clerk/nextjs'
 
 export default function RootLayout({
     children,
 }: {children: React.ReactNode}) {
     return(
+        <ClerkProvider>
         <html lang="en">
-            <body className='text-white'>
+            <body className='text-black'>
                 {children}
+                <Footer />
             </body>
         </html>
+        </ClerkProvider>
     )
 }
